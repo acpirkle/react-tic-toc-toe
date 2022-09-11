@@ -88,7 +88,13 @@ function Game() {
   if (winner) {
     statusMsg = "Winner: " + winner;
   } else {
-    statusMsg = `Next player: ${xIsNext ? "X" : "O"}`;
+    if (current.squares.includes(null)) {
+      statusMsg = `Next player: ${xIsNext ? "X" : "O"}`;
+    }
+    else {
+      statusMsg = `The game ended in a draw`;
+    }
+    
   }
 
 
